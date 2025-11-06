@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字图书展销平台</title>
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: "微软雅黑", sans-serif;
+        color: #333;
+        line-height: 1.6;
+    }
+    .header {
+        background-color: #f5f5f5;
+        padding: 10px 20px;
+        overflow: hidden; 
+        position: relative;
+    }
+    .logo {
+        float: left;
+    }   
+    .logo img {
+        height: 60px;
+    }
+    .nav {
+        float: left;
+        margin-left: 50px;
+    }
+    .nav-list {
+        list-style: none;
+    }
+    .nav-item {
+        float: left;
+        margin-right: 30px;
+        position: relative; 
+    }
+    .nav-item a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        display: block;
+        padding: 10px;
+    }
+    .nav-item a:hover {
+        color: #ff6600;
+        cursor: pointer;
+    }
+    .fixed-cart {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #ff6600;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 99;
+    }
+    .fixed-cart a {
+        color: #fff;
+        text-decoration: none;
+    }
+    .fixed-cart:hover {
+        cursor: pointer;
+        background-color: #e65c00;
+    }   
+    .main {
+        width: 1200px;
+        margin: 20px auto;
+        overflow: hidden; 
+        z-index: 10;
+    }
+    .sidebar {
+        width: 200px;
+        float: left;
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin-right: 20px;
+    }
+    .sidebar h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
+    .category-list {
+        list-style: none;
+    }
+    .category-item {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .category-item a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        display: block;
+
+    }
+    .category-item a:hover{
+        color: #ff6600;
+        cursor: pointer;
+    }
+    .category-item:hover {
+        cursor: pointer;
+        color: #ff6600;
+    }
+    .dropdown-menu {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        width: 120px;
+        display: none;
+        z-index:999;
+    }
+    .has-dropdown:hover .dropdown-menu {
+        color: #e65c00;
+        display: block; 
+    }
+    .dropdown-menu li a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    .sub-category {
+        list-style: none;
+        margin-left: 20px;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+    .sub-category li a {
+        text-decoration: none;
+        color: #666;
+    }
+    .sub-category li a:hover {
+        color: #ff6600;
+    }
+    .content {
+        width: 700px;
+        float: left;
+        margin-right: 20px;
+    }   
+    .content h2 {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    .book-list {
+        overflow: hidden; 
+        margin-bottom: 30px;
+    }
+    .book-card {
+        width:30%;
+        float: left;
+        margin-right: 15px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .book-card:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+    .book-img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+    .book-info {
+        padding: 10px 0;
+    }
+    .book-info h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .price {
+        color: #ff6600;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .book-actions {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        display: none; 
+    }
+    .book-card:hover .book-actions {
+        display: block;
+    }
+    .btn {
+        background-color: #ff6600;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .btn:hover {
+        background-color: #e65c00;
+    }
+    .new-book-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .new-book-table th, .new-book-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    .new-book-table th {
+        background-color: #f5f5f5;
+    }
+    .promotion {
+        width: 240px;
+        float: left;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+    .promotion h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
+    .promotion-item {
+        margin-bottom: 20px;
+    }
+    .promotion-item img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #ff6600;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 20px;
+        opacity: 0; 
+        transition: opacity 0.3s;
+        z-index: 99;
+    }
+    .back-to-top:hover {
+        background-color: #e65c00;
+        cursor: pointer;
+    }
+    body:hover .back-to-top {
+        opacity: 1;
+    }
+    .loading-mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none; 
+        z-index: 999;
+    }
+    .loading-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 20px;
+    }
+    .book-card, .promotion-item, .btn, .nav-item, .category-item {
+        transition: all 0.3s ease;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="秋分营销logo.jpg" alt="图书展销平台Logo">
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href=" ">首页</a >
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">图书分类</a >
+                    
+                </li>
+                <li class="nav-item">
+                    <a href="#">新书上市</a >
+                </li>
+                <li class="nav-item">
+                    <a href="#">促销活动</a >
+                </li>
+            </ul>
+        </nav>
+        <div class="fixed-cart">
+            <a href="#" class="cart-icon">购物车</a >
+        </div>
+    </header>
+    <main class="main">
+        <aside class="sidebar">
+            <h2>图书分类</h2>
+            <ul class="category-list">
+                <li class="category-item has-dropdown" style="position: relative; left: 5px;">
+                    <a href="#">小说</a>
+                    <ul class="dropdown-menu" >
+                        <li><a href="#">科幻</a ></li>
+                        <li><a href="#">悬疑</a ></li>
+                        <li><a href="#">言情</a ></li>
+                    </ul>
+                </li>
+                <li class="category-item">科普</li>
+                <li class="category-item">历史</li>
+                <li class="category-item">哲学</li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h2>热门推荐</h2>
+            <div class="book-list">
+                <div class="book-card">
+                    <img src="营业悖论.jpg" alt="图书1" class="book-img">
+                    <div class="book-info">
+                        <h3>《营业悖论》</h3>
+                        <p>稚楚</p >
+                        <p class="price">¥51.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="天官赐福.jpg" alt="图书2" class="book-img">
+                    <div class="book-info">
+                        <h3>《天官赐福》</h3>
+                        <p>墨香铜臭</p >
+                        <p class="price">¥200.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="二锅水.jpg" alt="图书3" class="book-img">
+                    <div class="book-info">
+                        <h3>《二锅水》</h3>
+                        <p>烟酒与猫</p >
+                        <p class="price">¥68.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="将进酒.jpg" alt="图书4" class="book-img">
+                    <div class="book-info">
+                        <h3>《将进酒》</h3>
+                        <p>唐酒卿</p >
+                        <p class="price">¥71.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="某某.jpg" alt="图书5" class="book-img">
+                    <div class="book-info">
+                        <h3>《某某》</h3>
+                        <p>木苏里</p >
+                        <p class="price">¥38.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="撒野.jpg" alt="图书6" class="book-img">
+                    <div class="book-info">
+                        <h3>《撒野》</h3>
+                        <p>巫哲</p >
+                        <p class="price">¥58.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+            <h2>新书上市</h2>
+            <table class="new-book-table">
+                <tr>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>价格</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>《悬日》</td>
+                    <td>稚楚</td>
+                    <td>¥49.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+                <tr>
+                    <td>《人鱼陷落》</td>
+                    <td>麟潜</td>
+                    <td>¥63.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+            </table>
+        </section>
+        <aside class="promotion">
+            <h2>促销活动</h2>
+            <div class="promotion-item">
+                <img src="满减.jpg" alt="满减活动">
+                <p>满199减50，限时3天！</p >
+            </div>
+            <div class="promotion-item">
+                <img src="折扣.jpg" alt="新书折扣">
+                <p>新书上市7折起，先到先得！</p >
+            </div>
+        </aside>
+    </main>
+     <a href=" " class="back-to-top">↑</a >
+     <div class="loading-mask">
+         <div class="loading-text">加载中...</div>
+     </div>
+ </body>
+ </html>
