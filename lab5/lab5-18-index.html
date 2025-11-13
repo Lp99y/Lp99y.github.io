@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="lab5-18-index.css">
+    <title>数字图书展销平台</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="秋分营销logo.jpg" alt="图书展销平台Logo">
+        </div>
+        <div class="header-test">月落书轩</div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href=" ">首页</a >
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">图书分类</a >    
+                </li>
+                <li class="nav-item">
+                    <a href="#">新书上市</a >
+                </li>
+                <li class="nav-item">
+                    <a href="#">促销活动</a >
+                </li>
+                <li class="nav-item">
+                    <a href="lab5..-18.html" >推荐订阅</a>
+                </li>
+                <li class="nav-item">
+                    <a href="">我的</a >
+                </li>
+                <li class="nav-item">
+                    <a href="lab5.-18.html">登录/注册</a >
+                </li>
+            </ul>
+        </nav>
+        <div class="fixed-cart">
+            <a href="#" class="cart-icon">购物车</a >
+        </div>
+    </header>
+    <main class="main">
+        <aside class="sidebar">
+            <h2>图书分类</h2>
+            <ul class="category-list">
+                <li class="category-item has-dropdown" style="position: relative; left: 5px;">
+                    <a href="#" style="margin-left: -5px;">
+                        <img style="padding-top: 5px;margin-bottom: -2px;;" src="小说.jpg" width="20px" height="20px">&nbsp;小说</a>
+                    <ul class="dropdown-menu" >
+                        <li><a href="#">科幻</a ></li>
+                        <li><a href="#">悬疑</a ></li>
+                        <li><a href="#">言情</a ></li>
+                    </ul>
+                </li>
+                <li class="category-item">
+                    <img style="padding-top: 5px;margin-bottom: -2px;" src="科普.jpg" width="20px" height="20px">&nbsp;科学</li>
+                <li class="category-item">
+                    <img style="padding-top: 5px;margin-bottom: -2px;" src="历史.jpg" width="20px" height="20px">&nbsp;历史</li>
+                <li class="category-item">
+                    <img style="padding-top: 5px;margin-bottom: -2px;" src="哲学.jpg" width="20px" height="20px">&nbsp;艺术</li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h2>热门推荐</h2>
+            <div class="book-list">
+                <div class="book-card">
+                    <img src="营业悖论.jpg" alt="图书1" class="book-img">
+                    <div class="book-info">
+                        <h3>《营业悖论》</h3>
+                        <p>稚楚</p >
+                        <p class="price">¥51.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="天官赐福.jpg" alt="图书2" class="book-img">
+                    <div class="book-info">
+                        <h3>《天官赐福》</h3>
+                        <p>墨香铜臭</p >
+                        <p class="price">¥200.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="二锅水.jpg" alt="图书3" class="book-img">
+                    <div class="book-info">
+                        <h3>《二锅水》</h3>
+                        <p>烟酒与猫</p >
+                        <p class="price">¥68.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="将进酒.jpg" alt="图书4" class="book-img">
+                    <div class="book-info">
+                        <h3>《将进酒》</h3>
+                        <p>唐酒卿</p >
+                        <p class="price">¥71.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="某某.jpg" alt="图书5" class="book-img">
+                    <div class="book-info">
+                        <h3>《某某》</h3>
+                        <p>木苏里</p >
+                        <p class="price">¥38.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="撒野.jpg" alt="图书6" class="book-img">
+                    <div class="book-info">
+                        <h3>《撒野》</h3>
+                        <p>巫哲</p >
+                        <p class="price">¥58.00</p >
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+            <h2>新书上市</h2>
+            <table class="new-book-table">
+                <tr>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>价格</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>《悬日》</td>
+                    <td>稚楚</td>
+                    <td>¥49.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+                <tr>
+                    <td>《人鱼陷落》</td>
+                    <td>麟潜</td>
+                    <td>¥63.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+            </table>
+        </section>
+        <aside class="promotion">
+            <h2>促销活动</h2>
+            <div class="promotion-item">
+                <img src="满减.jpg" alt="满减活动">
+                <p>满199减50，限时3天！</p >
+            </div>
+            <div class="promotion-item">
+                <img src="折扣.jpg" alt="新书折扣">
+                <p>新书上市7折起，先到先得！</p >
+            </div>
+        </aside>
+    </main>
+     <a href=" " class="back-to-top">↑</a >
+     <div class="loading-mask">
+         <div class="loading-text">加载中...</div>
+     </div>
+ </body>
+ </html>
