@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字图书展销平台</title>
+    <link rel="stylesheet" href="lab5-18-index.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="秋分营销logo.jpg" alt="图书展销平台Logo">
+        </div>
+        <div class="header-test">月落书轩</div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">图书分类</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">新书上市</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">促销活动</a>
+                </li>
+                <li class="nav-item book-recommend-trigger">
+                    <a href="#">推荐订阅</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">我的</a>
+                </li>
+                <li class="nav-item login-trigger">
+                    <a href="#">登录/注册</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="fixed-cart">
+            <a href="#" class="cart-icon">购物车</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <h2>图书分类</h2>
+            <ul class="category-list">
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom: -4px;" src="小说.png" width="25px" height="25px">&nbsp;小说文学
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">言情小说</a></li>
+                        <li><a href="#">科幻小说</a></li>
+                        <li><a href="#">悬疑推理</a></li>
+                        <li><a href="#">武侠小说</a></li>
+                        <li><a href="#">历史小说</a></li>
+                        <li><a href="#">耽美小说</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom: -4px;" src="科学.png" width="25px" height="25px">&nbsp;科学技术
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">计算机科学</a></li>
+                        <li><a href="#">自然科学</a></li>
+                        <li><a href="#">工程技术</a></li>
+                        <li><a href="#">医学健康</a></li>
+                        <li><a href="#">农业科学</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom:-4px;" src="历史.png" width="25px" height="25px">&nbsp;人文历史
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">中国历史</a></li>
+                        <li><a href="#">世界历史</a></li>
+                        <li><a href="#">人物传记</a></li>
+                        <li><a href="#">考古发现</a></li>
+                        <li><a href="#">文化研究</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom: -4px;" src="艺术.png" width="25px" height="25px">&nbsp;哲学艺术
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">哲学理论</a></li>
+                        <li><a href="#">艺术设计</a></li>
+                        <li><a href="#">音乐舞蹈</a></li>
+                        <li><a href="#">戏剧影视</a></li>
+                        <li><a href="#">摄影绘画</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom: -4px;" src="经济.png" width="25px" height="25px">&nbsp;经济管理
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">经济学</a></li>
+                        <li><a href="#">企业管理</a></li>
+                        <li><a href="#">市场营销</a></li>
+                        <li><a href="#">金融投资</a></li>
+                        <li><a href="#">会计财务</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom: -4px;" src="教育.png" width="25px" height="25px">&nbsp;教育考试
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">教材教辅</a></li>
+                        <li><a href="#">考试用书</a></li>
+                        <li><a href="#">语言学习</a></li>
+                        <li><a href="#">家庭教育</a></li>
+                        <li><a href="#">职业培训</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom: -4px;" src="休闲.png" width="25px" height="25px">&nbsp;生活休闲
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">美食烹饪</a></li>
+                        <li><a href="#">旅游地理</a></li>
+                        <li><a href="#">健身养生</a></li>
+                        <li><a href="#">家居装饰</a></li>
+                        <li><a href="#">亲子育儿</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img style="padding-top: 5px;margin-bottom: -4px;" src="少儿.png" width="25px" height="25px">&nbsp;少儿读物
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">儿童文学</a></li>
+                        <li><a href="#">绘本漫画</a></li>
+                        <li><a href="#">科普读物</a></li>
+                        <li><a href="#">启蒙教育</a></li>
+                        <li><a href="#">益智游戏</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <section class="content">
+            <h2>热门推荐</h2>
+            <div class="book-list">
+                <div class="book-card">
+                    <img src="营业悖论.jpg" alt="图书1" class="book-img">
+                    <div class="book-info">
+                        <h3>《营业悖论》</h3>
+                        <p>稚楚</p>
+                        <p class="price">¥51.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="天官赐福.jpg" alt="图书2" class="book-img">
+                    <div class="book-info">
+                        <h3>《天官赐福》</h3>
+                        <p>墨香铜臭</p>
+                        <p class="price">¥200.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="二锅水.jpg" alt="图书3" class="book-img">
+                    <div class="book-info">
+                        <h3>《二锅水》</h3>
+                        <p>烟酒与猫</p>
+                        <p class="price">¥68.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="将进酒.jpg" alt="图书4" class="book-img">
+                    <div class="book-info">
+                        <h3>《将进酒》</h3>
+                        <p>唐酒卿</p>
+                        <p class="price">¥71.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="某某.jpg" alt="图书5" class="book-img">
+                    <div class="book-info">
+                        <h3>《某某》</h3>
+                        <p>木苏里</p>
+                        <p class="price">¥38.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="撒野.jpg" alt="图书6" class="book-img">
+                    <div class="book-info">
+                        <h3>《撒野》</h3>
+                        <p>巫哲</p>
+                        <p class="price">¥58.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+            <h2>新书上市</h2>
+            <table class="new-book-table">
+                <tr>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>价格</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>《悬日》</td>
+                    <td>稚楚</td>
+                    <td>¥49.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+                <tr>
+                    <td>《人鱼陷落》</td>
+                    <td>麟潜</td>
+                    <td>¥63.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+            </table>
+        </section>
+        <aside class="promotion">
+            <h2>促销活动</h2>
+            <div class="promotion-item">
+                <img src="满减.jpg" alt="满减活动">
+                <p>满199减50，限时3天！</p>
+            </div>
+            <div class="promotion-item">
+                <img src="折扣.jpg" alt="新书折扣">
+                <p>新书上市7折起，先到先得！</p>
+            </div>
+        </aside>
+    </div>
+    
+    <a href="#" class="back-to-top">↑</a>
+    <div class="loading-mask">
+        <div class="loading-text">加载中...</div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="floating-login-container" id="loginForm">
+        <button class="close-btn" id="closeLogin">×</button>
+        <h2>用户登录</h2>
+        <form>
+            <div class="form-group">
+                <label for="username"><img src="用户.png" style="width: 15px;height: 15px;">&nbsp;用户名/邮箱</label>
+                <input type="text" id="username" placeholder="请输入用户名或邮箱">
+            </div>
+            <div class="form-group">
+                <label for="password"><img src="密码.png" style="width: 15px;height: 15px;">&nbsp;密码</label>
+                <input type="password" id="password" placeholder="请输入密码">
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">记住我</label>
+            </div>
+            <button type="submit">登录</button>
+            <div class="register-link">
+                还没有账号？<a href="register.html">立即注册</a>
+            </div>
+        </form>
+    </div>
+    <div class="floating-book-form" id="bookForm">
+        <button class="close-btn" id="closeBookForm">×</button>
+        <h2>图书推荐订阅表单</h2>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="avatar-upload">
+                <div class="avatar-preview" id="avatarPreview">
+                    <span>上传头像</span>
+                </div>
+                <input type="file" id="avatar" name="avatar" accept="image/*">
+                <span class="file-info">支持JPG、PNG格式</span>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="username" class="icon-label">
+                            <img src="用户.png">&nbsp;用户名 <span class="required-mark">*</span>
+                        </label>
+                        <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="password" class="icon-label">
+                            <img src="密码.png">&nbsp;密码 <span class="required-mark">*</span>
+                        </label>
+                        <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                        <span class="form-hint">请设置6-16位包含字母和数字的密码</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="email" class="icon-label">
+                            <img src="邮箱.png">&nbsp;邮箱 <span class="required-mark">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="请输入邮箱" required>
+                        <span class="form-hint">推荐信息将发送至该邮箱</span>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="birthdate" class="icon-label">
+                            <img src="生日.png">&nbsp;出生日期
+                        </label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </div>
+                </div>
+            </div>
+            
+            <fieldset>
+                <legend>个人信息</legend>
+                
+                <div class="form-group">
+                    <label>性别</label>
+                    <div class="radio-group-container">
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male" checked>
+                            <label for="male">男</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">女</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>图书兴趣</label>
+                    <div class="checkbox-group-container">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="fiction" name="interest" value="fiction" checked>
+                            <label for="fiction">小说</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="history" name="interest" value="history">
+                            <label for="history">历史</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="science" name="interest" value="science">
+                            <label for="science">科学</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="art" name="interest" value="art">
+                            <label for="art">艺术</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="province" class="icon-label">
+                        <img src="地区.png">&nbsp;所在省份/地区 <span class="required-mark">*</span>
+                    </label>
+                    <select id="province" name="province" required>
+                        <option value="">请选择省份/地区</option>
+                        <option value="beijing">北京市</option>
+                        <option value="tianjin">天津市</option>
+                        <option value="hebei">河北省</option>
+                        <option value="shanxi">山西省</option>
+                        <option value="neimenggu">内蒙古自治区</option>
+                        <option value="liaoning">辽宁省</option>
+                        <option value="jilin">吉林省</option>
+                        <option value="heilongjiang">黑龙江省</option>
+                        <option value="shanghai">上海市</option>
+                        <option value="jiangsu">江苏省</option>
+                        <option value="zhejiang">浙江省</option>
+                        <option value="anhui">安徽省</option>
+                        <option value="fujian">福建省</option>
+                        <option value="jiangxi">江西省</option>
+                        <option value="shandong">山东省</option>
+                        <option value="henan">河南省</option>
+                        <option value="hubei">湖北省</option>
+                        <option value="hunan">湖南省</option>
+                        <option value="guangdong">广东省</option>
+                        <option value="guangxi">广西壮族自治区</option>
+                        <option value="hainan">海南省</option>
+                        <option value="chongqing">重庆市</option>
+                        <option value="sichuan">四川省</option>
+                        <option value="guizhou">贵州省</option>
+                        <option value="yunnan">云南省</option>
+                        <option value="xizang">西藏自治区</option>
+                        <option value="shaanxi">陕西省</option>
+                        <option value="gansu">甘肃省</option>
+                        <option value="qinghai">青海省</option>
+                        <option value="ningxia">宁夏回族自治区</option>
+                        <option value="xinjiang">新疆维吾尔自治区</option>
+                        <option value="xianggang">香港特别行政区</option>
+                        <option value="aomen">澳门特别行政区</option>
+                        <option value="taiwan">台湾省</option>
+                    </select>
+                </div>
+            </fieldset>
+            
+            <div class="form-group">
+                <label class="icon-label">
+                    <img src="兴趣.png">&nbsp;图书分类偏好（可多选） <span class="required-mark">*</span>
+                </label>
+                <div class="preferences-grid">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="literature" name="book-category" value="literature">
+                        <label for="literature">文学</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="economy" name="book-category" value="economy">
+                        <label for="economy">经济</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="technology" name="book-category" value="technology">
+                        <label for="technology">科技</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="education" name="book-category" value="education">
+                        <label for="education">教育</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="health" name="book-category" value="health">
+                        <label for="health">健康</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="philosophy" name="book-category" value="philosophy">
+                        <label for="philosophy">哲学</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="sociology" name="book-category" value="sociology">
+                        <label for="sociology">社会学</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="biography" name="book-category" value="biography">
+                        <label for="biography">传记</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="art" name="book-category" value="art">
+                        <label for="art">艺术</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="history" name="book-category" value="history">
+                        <label for="history">历史</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="travel" name="book-category" value="travel">
+                        <label for="travel">旅行</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="comic" name="book-category" value="comic">
+                        <label for="comic">漫画</label>
+                    </div>
+                </div>
+                <span class="form-hint">请选择您感兴趣的图书分类，可多选</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="message" class="icon-label">
+                    <img src="留言.png">&nbsp;订阅留言
+                </label>
+                <textarea id="message" name="message" placeholder="请输入您对图书推荐的特殊需求..."></textarea>
+            </div>
+            
+            <div class="btn-group">
+                <button type="submit">提交订阅</button>
+                <button type="reset">重置表单</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginTrigger = document.querySelector('.login-trigger');
+            const loginForm = document.getElementById('loginForm');
+            const closeLogin = document.getElementById('closeLogin');
+            const bookTrigger = document.querySelector('.book-recommend-trigger');
+            const bookForm = document.getElementById('bookForm');
+            const closeBookForm = document.getElementById('closeBookForm');
+            const overlay = document.getElementById('overlay');
+            
+            loginTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginForm.classList.add('active');
+                overlay.classList.add('active');
+            });
+            
+            closeLogin.addEventListener('click', function() {
+                loginForm.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            
+            bookTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                bookForm.classList.add('active');
+                overlay.classList.add('active');
+            });
+            
+            closeBookForm.addEventListener('click', function() {
+                bookForm.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            
+            overlay.addEventListener('click', function() {
+                loginForm.classList.remove('active');
+                bookForm.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            
+             loginForm.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            bookForm.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
