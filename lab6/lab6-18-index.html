@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字图书展销平台 - 月落书轩</title>
+    <link rel="stylesheet" href="lab6-18-index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo.jpg" alt="图书展销平台Logo">
+        </div>
+        <div class="header-test">月落书轩</div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#"><i class="fas fa-home"></i> 首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fas fa-book-open"></i> 图书分类</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fas fa-book"></i> 新书上市</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fas fa-tag"></i> 促销活动</a>
+                </li>
+                <li class="nav-item book-recommend-trigger">
+                    <a href="#"><i class="fas fa-star"></i> 推荐订阅</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fas fa-user"></i> 我的</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="search-container">
+                <input type="text" placeholder="搜索图书、作者、分类..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="cart-container">
+                <a href="#" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+            <div class="login-trigger">
+                <a href="#"><i class="fas fa-sign-in-alt"></i> 登录/注册</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <h2><i class="fas fa-list"></i> 图书分类</h2>
+            <ul class="category-list">
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="小说.png" width="25" height="25" alt="小说">&nbsp;小说文学
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">言情小说</a></li>
+                        <li><a href="#">科幻小说</a></li>
+                        <li><a href="#">悬疑推理</a></li>
+                        <li><a href="#">武侠小说</a></li>
+                        <li><a href="#">历史小说</a></li>
+                        <li><a href="#">耽美小说</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="科学.png" width="25" height="25" alt="科学">&nbsp;科学技术
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">计算机科学</a></li>
+                        <li><a href="#">自然科学</a></li>
+                        <li><a href="#">工程技术</a></li>
+                        <li><a href="#">医学健康</a></li>
+                        <li><a href="#">农业科学</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="历史.png" width="25" height="25" alt="历史">&nbsp;人文历史
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">中国历史</a></li>
+                        <li><a href="#">世界历史</a></li>
+                        <li><a href="#">人物传记</a></li>
+                        <li><a href="#">考古发现</a></li>
+                        <li><a href="#">文化研究</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="艺术.png" width="25" height="25" alt="艺术">&nbsp;哲学艺术
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">哲学理论</a></li>
+                        <li><a href="#">艺术设计</a></li>
+                        <li><a href="#">音乐舞蹈</a></li>
+                        <li><a href="#">戏剧影视</a></li>
+                        <li><a href="#">摄影绘画</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="经济.png" width="25" height="25" alt="经济">&nbsp;经济管理
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">经济学</a></li>
+                        <li><a href="#">企业管理</a></li>
+                        <li><a href="#">市场营销</a></li>
+                        <li><a href="#">金融投资</a></li>
+                        <li><a href="#">会计财务</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="教育.png" width="25" height="25" alt="教育">&nbsp;教育考试
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">教材教辅</a></li>
+                        <li><a href="#">考试用书</a></li>
+                        <li><a href="#">语言学习</a></li>
+                        <li><a href="#">家庭教育</a></li>
+                        <li><a href="#">职业培训</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="休闲.png" width="25" height="25" alt="休闲">&nbsp;生活休闲
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">美食烹饪</a></li>
+                        <li><a href="#">旅游地理</a></li>
+                        <li><a href="#">健身养生</a></li>
+                        <li><a href="#">家居装饰</a></li>
+                        <li><a href="#">亲子育儿</a></li>
+                    </ul>
+                </li>
+                <li class="category-item sidebar-has-dropdown">
+                    <a href="#">
+                        <img src="少儿.png" width="25" height="25" alt="少儿">&nbsp;少儿读物
+                    </a>
+                    <ul class="sidebar-dropdown">
+                        <li><a href="#">儿童文学</a></li>
+                        <li><a href="#">绘本漫画</a></li>
+                        <li><a href="#">科普读物</a></li>
+                        <li><a href="#">启蒙教育</a></li>
+                        <li><a href="#">益智游戏</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+        <section class="content">
+            <!-- 轮播图 -->
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <div class="carousel-slide active">
+                        <img src="营业悖论.jpg" alt="营业悖论">
+                        <div class="slide-content">
+                            <h3 class="slide-title">《营业悖论》</h3>
+                            <p class="slide-author">作者：稚楚</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="天官赐福.jpg" alt="天官赐福">
+                        <div class="slide-content">
+                            <h3 class="slide-title">《天官赐福》</h3>
+                            <p class="slide-author">作者：墨香铜臭</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="将进酒.jpg" alt="将进酒">
+                        <div class="slide-content">
+                            <h3 class="slide-title">《将进酒》</h3>
+                            <p class="slide-author">作者：唐酒卿</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="判官.jpg" alt="判官">
+                        <div class="slide-content">
+                            <h3 class="slide-title">《判官》</h3>
+                            <p class="slide-author">作者：木苏里</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="惊封.jpg" alt="惊封">
+                        <div class="slide-content">
+                            <h3 class="slide-title">《惊封》</h3>
+                            <p class="slide-author">作者：壶鱼辣椒</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev"></button>
+                    <button class="carousel-next"></button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section-title"><i class="fas fa-crown"></i> 热门推荐</h2>
+            <div class="book-list">
+                <div class="book-card">
+                    <img src="营业悖论.jpg" alt="营业悖论" class="book-img">
+                    <div class="book-info">
+                        <h3>《营业悖论》</h3>
+                        <p>稚楚</p>
+                        <p class="price">¥51.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="天官赐福.jpg" alt="天官赐福" class="book-img">
+                    <div class="book-info">
+                        <h3>《天官赐福》</h3>
+                        <p>墨香铜臭</p>
+                        <p class="price">¥200.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="二锅水.jpg" alt="二锅水" class="book-img">
+                    <div class="book-info">
+                        <h3>《二锅水》</h3>
+                        <p>烟酒与猫</p>
+                        <p class="price">¥68.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="将进酒.jpg" alt="将进酒" class="book-img">
+                    <div class="book-info">
+                        <h3>《将进酒》</h3>
+                        <p>唐酒卿</p>
+                        <p class="price">¥71.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="某某.jpg" alt="某某" class="book-img">
+                    <div class="book-info">
+                        <h3>《某某》</h3>
+                        <p>木苏里</p>
+                        <p class="price">¥38.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="撒野.jpg" alt="撒野" class="book-img">
+                    <div class="book-info">
+                        <h3>《撒野》</h3>
+                        <p>巫哲</p>
+                        <p class="price">¥58.00</p>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn">加入购物车</button>
+                        <button class="btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section-title"><i class="fas fa-book"></i> 新书上市</h2>
+            <table class="new-book-table">
+                <tr>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>价格</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>《悬日》</td>
+                    <td>稚楚</td>
+                    <td>¥49.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+                <tr>
+                    <td>《人鱼陷落》</td>
+                    <td>麟潜</td>
+                    <td>¥63.00</td>
+                    <td><button class="btn">购买</button></td>
+                </tr>
+            </table>
+        </section>
+        <aside class="promotion">
+            <h2><i class="fas fa-gift"></i> 促销活动</h2>
+            <div class="promotion-item">
+                <img src="满减.jpg" alt="满减活动">
+                <p>满199减50，限时3天！</p>
+            </div>
+            <div class="promotion-item">
+                <img src="折扣.jpg" alt="新书折扣">
+                <p>新书上市7折起，先到先得！</p>
+            </div>
+        </aside>
+    </div>
+    <a href="#" class="back-to-top">↑</a>
+    <div class="loading-mask">
+        <div class="loading-text">加载中...</div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <!-- 登录表单 -->
+    <div class="floating-login-container" id="loginForm">
+        <button class="close-btn" id="closeLogin">×</button>
+        <h2>用户登录</h2>
+        <form>
+            <div class="form-group">
+                <label for="username"><img src="用户.png" style="width: 15px;height: 15px;">&nbsp;用户名/邮箱</label>
+                <input type="text" id="username" placeholder="请输入用户名或邮箱">
+            </div>
+            <div class="form-group">
+                <label for="password"><img src="密码.png" style="width: 15px;height: 15px;">&nbsp;密码</label>
+                <input type="password" id="password" placeholder="请输入密码">
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">记住我</label>
+            </div>
+            <button type="submit">登录</button>
+            <div class="register-link">
+                还没有账号？<a href="#" class="switch-to-register">立即注册</a>
+            </div>
+        </form>
+    </div>
+    <!-- 注册表单 -->
+    <div class="floating-login-container" id="registerForm">
+        <button class="close-btn" id="closeRegister">×</button>
+        <h2>用户注册</h2>
+        <form>
+            <div class="form-group">
+                <label for="reg-username">用户名</label>
+                <input type="text" id="reg-username" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="reg-email">邮箱</label>
+                <input type="email" id="reg-email" placeholder="请输入邮箱">
+            </div>
+            <div class="form-group">
+                <label for="reg-password">密码</label>
+                <input type="password" id="reg-password" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <label for="reg-confirm-password">确认密码</label>
+                <input type="password" id="reg-confirm-password" placeholder="请再次输入密码">
+            </div>
+            <button type="submit">注册</button>
+            <div class="register-link">
+                已有账号？<a href="#" class="switch-to-login">立即登录</a>
+            </div>
+        </form>
+    </div>
+    <!-- 图书推荐表单 -->
+    <div class="floating-book-form" id="bookForm">
+        <button class="close-btn" id="closeBookForm">×</button>
+        <h2>图书推荐</h2>
+        <form>
+            <div class="form-group">
+                <label for="book-title">书名</label>
+                <input type="text" id="book-title" placeholder="请输入书名">
+            </div>
+            <div class="form-group">
+                <label for="book-author">作者</label>
+                <input type="text" id="book-author" placeholder="请输入作者">
+            </div>
+            <div class="form-group">
+                <label for="book-category">分类</label>
+                <select id="book-category">
+                    <option value="">请选择分类</option>
+                    <option value="fiction">小说文学</option>
+                    <option value="science">科学技术</option>
+                    <option value="history">人文历史</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="book-reason">推荐理由</label>
+                <textarea id="book-reason" rows="4" placeholder="请说明推荐理由"></textarea>
+            </div>
+            <button type="submit">提交推荐</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 登录注册逻辑
+            const loginTrigger = document.querySelector('.login-trigger');
+            const loginForm = document.getElementById('loginForm');
+            const closeLogin = document.getElementById('closeLogin');
+            const bookTrigger = document.querySelector('.book-recommend-trigger');
+            const bookForm = document.getElementById('bookForm');
+            const closeBookForm = document.getElementById('closeBookForm');
+            const overlay = document.getElementById('overlay');
+            // 登录/注册切换
+            const registerForm = document.getElementById('registerForm');
+            const closeRegister = document.getElementById('closeRegister');
+            const switchToRegister = document.querySelector('.switch-to-register');
+            const switchToLogin = document.querySelector('.switch-to-login');
+            loginTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginForm.classList.add('active');
+                overlay.classList.add('active');
+            });
+            closeLogin.addEventListener('click', function() {
+                loginForm.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            bookTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                bookForm.classList.add('active');
+                overlay.classList.add('active');
+            })
+            closeBookForm.addEventListener('click', function() {
+                bookForm.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            if (switchToRegister) {
+                switchToRegister.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loginForm.classList.remove('active');
+                    registerForm.classList.add('active');
+                });
+            }
+            if (switchToLogin) {
+                switchToLogin.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    registerForm.classList.remove('active');
+                    loginForm.classList.add('active');
+                });
+            }
+            if (closeRegister) {
+                closeRegister.addEventListener('click', function() {
+                    registerForm.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            }
+            overlay.addEventListener('click', function() {
+                loginForm.classList.remove('active');
+                bookForm.classList.remove('active');
+                registerForm.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            // 轮播图功能
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            let currentSlide = 0;
+            let carouselInterval;
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                currentSlide = index;
+                slides[currentSlide].classList.add('active');
+                indicators[currentSlide].classList.add('active');
+            }
+            function nextSlide() {
+                let nextIndex = currentSlide + 1;
+                if (nextIndex >= slides.length) {
+                    nextIndex = 0;
+                }
+                showSlide(nextIndex);
+            }
+            function prevSlide() {
+                let prevIndex = currentSlide - 1;
+                if (prevIndex < 0) {
+                    prevIndex = slides.length - 1;
+                }
+                showSlide(prevIndex);
+            }
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+            // 自动轮播
+            function startAutoCarousel() {
+                carouselInterval = setInterval(nextSlide, 5000);
+            }
+            function stopAutoCarousel() {
+                clearInterval(carouselInterval);
+            }
+            const carouselContainer = document.querySelector('.carousel-container');
+            carouselContainer.addEventListener('mouseenter', stopAutoCarousel);
+            carouselContainer.addEventListener('mouseleave', startAutoCarousel);
+            startAutoCarousel();
+            // 搜索功能
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            searchBtn.addEventListener('click', function() {
+                if (searchInput.value.trim() !== '') {
+                    alert(`搜索：${searchInput.value}`);
+                }
+            });
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    if (searchInput.value.trim() !== '') {
+                        alert(`搜索：${searchInput.value}`);
+                    }
+                }
+            });
+            // 购物车点击
+            const cartLink = document.querySelector('.cart-link');
+            cartLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('查看购物车');
+            });
+            // 返回顶部
+            const backToTop = document.querySelector('.back-to-top');
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+    </script>
+</body>
+</html>
